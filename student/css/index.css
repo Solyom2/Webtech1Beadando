@@ -30,3 +30,33 @@ body {
     text-align: center;
     border: 1px dotted orange;
 }
+
+#menuTable td:hover {
+    background-color: orange;
+}
+
+.WelcomeScreen {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 40px;
+    font-style: italic;
+    font-family: "Liberation Mono";
+}
+
+.WelcomeScreen img{
+    max-width: 600px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+}
+
+.Manufacturers, .Cars, .AddManufacturer, .AddCar {
+    display:  none;
+}
+
+.Manufacturers, .Cars, .AddManufacturer, .AddCar p {
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Liberation Mono";
+}
