@@ -60,3 +60,12 @@ body {
     font-style: italic;
     font-family: "Liberation Mono";
 }
+
+#manufacturersTable, #carsTable {
+    margin: 0 auto;
+    border: 5px solid blue;
+}
+
+#manufacturersTable th, td, #carsTable th, td {
+    border: 2px dotted orange;
+}
