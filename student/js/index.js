@@ -79,6 +79,15 @@ $(document).ready(function () {
         $(".Cars").hide();
         $(".AddManufacturer").hide();
         $(".AddCar").show();
+
+        $.getJSON("/manufacturerNames", function (data) {
+            var dropdown = $("#manufacturerDropDown");
+            dropdown.empty();
+            $.each(data, function (key, value) {
+                var item = $("<option value=" + "'" + value + "'>" + value + "</option>");
+                dropdown.append(item);
+            });
+        });
     });
 
 });

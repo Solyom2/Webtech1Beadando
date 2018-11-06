@@ -33,25 +33,66 @@
 
 <div class="Manufacturers">
     <p>Manufacturers</p>
-    <div id="manufacturersPlace">
-
-    </div>
+    <div id="manufacturersPlace"></div>
 </div>
 
 <div class="Cars">
     <p>Cars</p>
-    <div id="carsPlace">
-
-    </div>
+    <div id="carsPlace"></div>
 </div>
 
 <div class="AddManufacturer">
     <p>Add manufacturer to database</p>
+    <table id="addManufacturerTable">
+        <tr>
+            <td>Name:</td>
+            <td><input id="mName" type="text"></td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td><input id="mCountry" type="text"></td>
+        </tr>
+        <tr>
+            <td>Founded:</td>
+            <td><input id="mFounded" type="date"></td>
+        </tr>
+    </table>
     <button id="addManufacturerButton">Add</button>
 </div>
 
 <div class="AddCar">
     <p>Add car to database</p>
+    <table id="addCarTable">
+        <tr>
+            <td>Name:</td>
+            <td><input id="cName" type="text"></td>
+        </tr>
+        <tr>
+            <td>Consumption:</td>
+            <td><input id="cConsumption" type="text"></td>
+        </tr>
+        <tr>
+            <td>Color:</td>
+            <td><input id="cColor" type="text"></td>
+        </tr>
+        <tr>
+            <td>Manufacturer:</td>
+            <td><select id="manufacturerDropDown"></select></td>
+        </tr>
+        <tr>
+            <td>Available:</td>
+            <td><input id="cAvailable" type="number"></td>
+        </tr>
+        <tr>
+            <td>Year:</td>
+            <td><input id="cYear" type="number"></td>
+        </tr>
+        <tr>
+            <td>Horsepower:</td>
+            <td><input id="cHorsepower" type="number"></td>
+        </tr>
+    </table>
+    <button id="addCarButton">Add</button>
 </div>
 
 </body>

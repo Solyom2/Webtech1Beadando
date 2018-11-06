@@ -52,10 +52,11 @@ body {
 
 .Manufacturers, .Cars, .AddManufacturer, .AddCar {
     display:  none;
+    text-align: center;
+
 }
 
-.Manufacturers, .Cars, .AddManufacturer, .AddCar p {
-    text-align: center;
+.Manufacturers p, .Cars p, .AddManufacturer p, .AddCar p {
     font-size: 25px;
     font-style: italic;
     font-family: "Liberation Mono";
@@ -66,6 +67,10 @@ body {
     border: 5px solid blue;
 }
 
-#manufacturersTable th, td, #carsTable th, td {
+#carsTable th, td {
+    border: 2px dotted orange;
+}
+
+#manufacturersTable th, td {
     border: 2px dotted orange;
 }
