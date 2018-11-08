@@ -102,7 +102,6 @@ $(document).ready(function () {
         });
 
         listCars("All manufacturers");
-
     });
 
     $("#searchByManufacturerButton").click(function () {
@@ -135,7 +134,6 @@ $(document).ready(function () {
         });
     });
 
-
     $(function (){
         const form = $('#addCarForm');
         $(form).submit(function (event) {
@@ -146,7 +144,7 @@ $(document).ready(function () {
                 url: 'addCar',
                 data: $(form).serialize(),
                 success: function () {
-                    alert("Autó hozzáadva!");
+                    alert("OK");
                     //cars();
                 },
                 error: function () {
@@ -175,5 +173,6 @@ $(document).ready(function () {
             })
         })
     });
+
 
 });

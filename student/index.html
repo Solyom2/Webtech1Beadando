@@ -38,7 +38,7 @@
 
 <div class="Cars">
     <p>Cars</p>
-    <table>
+    <table id="searchByManufacturerTable">
         <tr>
             <td><select id="searchByManufacturerDropDown"></select></td>
             <td><button id="searchByManufacturerButton">List</button></td>
@@ -61,10 +61,10 @@
             </tr>
             <tr>
                 <td>Founded:</td>
-                <td><input mame="founded" type="date"></td>
+                <td><input name="founded" type="date" pattern=""></td>
             </tr>
         </table>
-        <button type="submit" id="addManufacturerButton">Add</button>
+        <button type="submit" id="addManufacturerButton">Submit</button>
     </form>
 
 </div>
@@ -79,7 +79,7 @@
             </tr>
             <tr>
                 <td>Consumption:</td>
-                <td><input name="consumption" type="text"></td>
+                <td><input name="consumption" type="text">L/100Km</td>
             </tr>
             <tr>
                 <td>Color:</td>
@@ -87,7 +87,7 @@
             </tr>
             <tr>
                 <td>Manufacturer:</td>
-                <td><select id="manufacturerDropDown"></select></td>
+                <td><select name="manufacturer" id="manufacturerDropDown"></select></td>
             </tr>
             <tr>
                 <td>Available:</td>
@@ -102,7 +102,7 @@
                 <td><input name="horsepower" type="number"></td>
             </tr>
         </table>
-        <button type="submit" id="addCarButton">Add</button>
+        <button type="submit" id="addCarButton">Submit</button>
     </form>
 </div>
 
