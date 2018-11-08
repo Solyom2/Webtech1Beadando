@@ -32,6 +32,56 @@ $(document).ready(function () {
         });
     });
 
+    function listCars(pManufacturer) {
+        $.getJSON('cars', function (data) {
+            var table = $('<table id = "carsTable"></table>');
+            table.append('<tr> <th>Name</th> <th>Consumption</th> <th>Color</th> <th>Manufacturer</th> <th>Available</th> <th>Year</th> <th>Horsepower</th> </tr>');
+
+            if(pManufacturer === "All manufacturers") {
+                $.each(data, function (key, value) {
+                    var row = $('<tr></tr>');
+                    var name = $('<td>' + value.name + '</td>');
+                    row.append(name);
+                    var consumption = $('<td>' + value.consumption + '</td>');
+                    row.append(consumption);
+                    var color = $('<td>' + value.color + '</td>');
+                    row.append(color);
+                    var manufacturer = $('<td>' + value.manufacturer + '</td>');
+                    row.append(manufacturer);
+                    var available = $('<td>' + value.available + '</td>');
+                    row.append(available);
+                    var year = $('<td>' + value.year + '</td>');
+                    row.append(year);
+                    var horsepower = $('<td>' + value.horsepower + '</td>');
+                    row.append(horsepower);
+                    table.append(row);
+                });
+            }
+            else {
+                $.each(data, function (key, value) {
+                    if(pManufacturer === value.manufacturer) {
+                        var row = $('<tr></tr>');
+                        var name = $('<td>' + value.name + '</td>');
+                        row.append(name);
+                        var consumption = $('<td>' + value.consumption + '</td>');
+                        row.append(consumption);
+                        var color = $('<td>' + value.color + '</td>');
+                        row.append(color);
+                        var manufacturer = $('<td>' + value.manufacturer + '</td>');
+                        row.append(manufacturer);
+                        var available = $('<td>' + value.available + '</td>');
+                        row.append(available);
+                        var year = $('<td>' + value.year + '</td>');
+                        row.append(year);
+                        var horsepower = $('<td>' + value.horsepower + '</td>');
+                        row.append(horsepower);
+                        table.append(row);
+                    }
+                });
+            }
+            $('#carsPlace').html(table);
+        });
+    }
 
     $("#menuTable td:contains('Cars')").click(function () {
         $(".WelcomeScreen").hide();
@@ -40,29 +90,24 @@ $(document).ready(function () {
         $(".AddCar").hide();
         $(".Cars").show();
 
-        $.getJSON('cars', function (data) {
-            var table = $('<table id = "carsTable"></table>');
-            table.append('<tr> <th>Name</th> <th>Consumption</th> <th>Color</th> <th>Manufacturer</th> <th>Available</th> <th>Year</th> <th>Horsepower</th> </tr>');
+        $.getJSON("/manufacturerNames", function (data) {
+            var dropdown = $("#searchByManufacturerDropDown");
+            dropdown.empty();
+            var all = $("<option>All manufacturers</option>");
+            dropdown.append(all);
             $.each(data, function (key, value) {
-                var row = $('<tr></tr>');
-                var name = $('<td>' + value.name + '</td>');
-                row.append(name);
-                var consumption = $('<td>' + value.consumption + '</td>');
-                row.append(consumption);
-                var color = $('<td>' + value.color + '</td>');
-                row.append(color);
-                var manufacturer = $('<td>' + value.manufacturer + '</td>');
-                row.append(manufacturer);
-                var available = $('<td>' + value.available + '</td>');
-                row.append(available);
-                var year = $('<td>' + value.year + '</td>');
-                row.append(year);
-                var horsepower = $('<td>' + value.horsepower + '</td>');
-                row.append(horsepower);
-                table.append(row);
+                var item = $("<option value=" + "'" + value + "'>" + value + "</option>");
+                dropdown.append(item);
             });
-            $('#carsPlace').html(table);
         });
+
+        listCars("All manufacturers");
+
+    });
+
+    $("#searchByManufacturerButton").click(function () {
+        var item = $("#searchByManufacturerDropDown :selected").text();
+        listCars(item);
     });
 
     $("#menuTable td:contains('Add manufacturer')").click(function () {
@@ -88,6 +133,47 @@ $(document).ready(function () {
                 dropdown.append(item);
             });
         });
+    });
+
+
+    $(function (){
+        const form = $('#addCarForm');
+        $(form).submit(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                type:'post',
+                url: 'addCar',
+                data: $(form).serialize(),
+                success: function () {
+                    alert("Autó hozzáadva!");
+                    //cars();
+                },
+                error: function () {
+                    alert("Hiba!");
+                }
+            })
+        })
+    });
+
+    $(function (){
+        const form = $('#addManufacturerForm');
+        $(form).submit(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                type:'post',
+                url: 'addManufacturers',
+                data: $(form).serialize(),
+                success: function () {
+                    alert("OK");
+                    //manufacturers();
+                },
+                error: function () {
+                    alert("Hiba!");
+                }
+            })
+        })
     });
 
 });

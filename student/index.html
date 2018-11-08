@@ -38,61 +38,72 @@
 
 <div class="Cars">
     <p>Cars</p>
+    <table>
+        <tr>
+            <td><select id="searchByManufacturerDropDown"></select></td>
+            <td><button id="searchByManufacturerButton">List</button></td>
+        </tr>
+    </table>
     <div id="carsPlace"></div>
 </div>
 
 <div class="AddManufacturer">
     <p>Add manufacturer to database</p>
-    <table id="addManufacturerTable">
-        <tr>
-            <td>Name:</td>
-            <td><input id="mName" type="text"></td>
-        </tr>
-        <tr>
-            <td>Country:</td>
-            <td><input id="mCountry" type="text"></td>
-        </tr>
-        <tr>
-            <td>Founded:</td>
-            <td><input id="mFounded" type="date"></td>
-        </tr>
-    </table>
-    <button id="addManufacturerButton">Add</button>
+    <form action="addManufacturers" method="post" id="addManufacturerForm">
+        <table id="addManufacturerTable">
+            <tr>
+                <td>Name:</td>
+                <td><input name="name" type="text"></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td><input name="country" type="text"></td>
+            </tr>
+            <tr>
+                <td>Founded:</td>
+                <td><input mame="founded" type="date"></td>
+            </tr>
+        </table>
+        <button type="submit" id="addManufacturerButton">Add</button>
+    </form>
+
 </div>
 
 <div class="AddCar">
     <p>Add car to database</p>
-    <table id="addCarTable">
-        <tr>
-            <td>Name:</td>
-            <td><input id="cName" type="text"></td>
-        </tr>
-        <tr>
-            <td>Consumption:</td>
-            <td><input id="cConsumption" type="text"></td>
-        </tr>
-        <tr>
-            <td>Color:</td>
-            <td><input id="cColor" type="text"></td>
-        </tr>
-        <tr>
-            <td>Manufacturer:</td>
-            <td><select id="manufacturerDropDown"></select></td>
-        </tr>
-        <tr>
-            <td>Available:</td>
-            <td><input id="cAvailable" type="number"></td>
-        </tr>
-        <tr>
-            <td>Year:</td>
-            <td><input id="cYear" type="number"></td>
-        </tr>
-        <tr>
-            <td>Horsepower:</td>
-            <td><input id="cHorsepower" type="number"></td>
-        </tr>
-    </table>
-    <button id="addCarButton">Add</button>
+    <form action="addCar" method="post" id="addCarForm">
+        <table id="addCarTable">
+            <tr>
+                <td>Name:</td>
+                <td><input name="name" type="text"></td>
+            </tr>
+            <tr>
+                <td>Consumption:</td>
+                <td><input name="consumption" type="text"></td>
+            </tr>
+            <tr>
+                <td>Color:</td>
+                <td><input name="color" type="text"></td>
+            </tr>
+            <tr>
+                <td>Manufacturer:</td>
+                <td><select id="manufacturerDropDown"></select></td>
+            </tr>
+            <tr>
+                <td>Available:</td>
+                <td><input name="available" type="number"></td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td><input name="year" type="number"></td>
+            </tr>
+            <tr>
+                <td>Horsepower:</td>
+                <td><input name="horsepower" type="number"></td>
+            </tr>
+        </table>
+        <button type="submit" id="addCarButton">Add</button>
+    </form>
 </div>
 
 </body>

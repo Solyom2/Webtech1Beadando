@@ -67,10 +67,15 @@ body {
     border: 5px solid blue;
 }
 
-#carsTable th, td {
+#carsTable th, #carsTable td {
     border: 2px dotted orange;
 }
 
-#manufacturersTable th, td {
+#manufacturersTable th, #manufacturersTable td {
     border: 2px dotted orange;
+}
+
+#addManufacturerTable, #addCarTable {
+    margin: 0 auto;
+    border: 5px solid blue;
 }
