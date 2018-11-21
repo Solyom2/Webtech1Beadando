@@ -17,7 +17,6 @@ $(document).ready(function () {
         hideAll();
         $(".AddManufacturer").show();
         $("#addManufacturerForm")[0].reset();
-        //$(".AddManufacturer").load("manufacturerForm.html");
     });
 
     $("#menuTable td:contains('Add car')").click(function () {
@@ -25,7 +24,6 @@ $(document).ready(function () {
         $(".AddCar").show();
         $("#addCarForm")[0].reset();
         listManufacturerNames();
-        //$(".AddCar").load("carForm.html");
     });
 
     $(function (){
