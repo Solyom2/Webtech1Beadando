@@ -46,6 +46,7 @@ $(document).ready(function () {
         })
     });
 
+
     $(function (){
         const form = $('#addManufacturerForm');
         $(form).submit(function (event) {
