@@ -46,7 +46,6 @@ $(document).ready(function () {
         })
     });
 
-
     $(function (){
         const form = $('#addManufacturerForm');
         $(form).submit(function (event) {
@@ -65,7 +64,6 @@ $(document).ready(function () {
             })
         })
     });
-
 
 });
 
